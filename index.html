@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Spirax&display=swap" rel="stylesheet">
+</head>
+<body class="grid-container invisible-chips-container">
+    <div class="chips-container">
+        <div class="bet center2"></div>
+    </div>
+    <header class="header">WELCOME!</header>
+    <aside class="left">LEFT SIDE</aside>
+    <main class="game-screen">
+        <div class="game-screen-grid-container">
+            
+            <div class="zeroes-container">
+                <div id="el0" class="hover-out green double-zero center-element"><p>00</p></div>
+                <div id="el00" class="hover-out green zero center-element"><p>0</p></div>
+
+            </div>
+<!-- div boxes should be relative, and the circles going on top should be absolute. The absolute element now ahs the ability to set left, top, bottom, right values. Relative to div. -->
+<!-- transform translate -->
+            <div class ="inner-table-container">
+                <div id="el1" class="hover-out red one">
+                    <div class="chip-placer"></div>
+                    <p>1</p>
+                </div>
+                <div id="el2" class="hover-out black two" ><p>2</p></div>
+                <div id="el3" class="hover-out red red three"><p>3</p></div>
+                <div id="el4" class="hover-out black four"><p>4</p></div>
+                <div id="el5" class="hover-out red five"><p>5</p></div>
+                <div id="el6" class="hover-out black six"><p>6</p></div>
+                <div id="el7" class="hover-out red seven"><p>7</p></div>
+                <div id="el8" class="hover-out black eight"><p>8</p></div>
+                <div id="el9" class="hover-out red nine"><p>9</p></div>
+                <div id="el10" class="hover-out black ten"><p>10</p></div>
+                <div id="el11" class="hover-out black eleven"><p>11</p></div>
+                <div id="el12" class="hover-out red twelve"><p>12</p></div>
+                <div id="el13" class="hover-out black thirteen"><p>13</p></div>
+                <div id="el14" class="hover-out red fourteen"><p>14</p></div>
+                <div id="el15" class="hover-out black fifteen"><p>15</p></div>
+                <div id="el16" class="hover-out red sixteen"><p>16</p></div>
+                <div id="el17" class="hover-out black seventeen"><p>17</p></div>
+                <div id="el18" class="hover-out red eighteen"><p>18</p></div>
+                <div id="el19" class="hover-out red nineteen"><p>19</p></div>
+                <div id="el20" class="hover-out black twenty"><p>20</p></div>
+                <div id="el21" class="hover-out red twenty-one"><p>21</p></div>
+                <div id="el22" class="hover-out black twenty-two"><p>22</p></div>
+                <div id="el23" class="hover-out red twenty-three"><p>23</p></div>
+                <div id="el24" class="hover-out black twenty-four"><p>24</p></div>
+                <div id="el25" class="hover-out red twenty-five"><p>25</p></div>
+                <div id="el26" class="hover-out black twenty-six"><p>26</p></div>
+                <div id="el27" class="hover-out red twenty-seven"><p>27</p></div>
+                <div id="el28" class="hover-out black twenty-eight"><p>28</p></div>
+                <div id="el29" class="hover-out black twenty-nine"><p>29</p></div>
+                <div id="el30" class="hover-out red thirty"><p>30</p></div>
+                <div id="el31" class="hover-out black thirty-one"><p>31</p></div>
+                <div id="el32" class="hover-out red thirty-two"><p>32</p></div>
+                <div id="el33" class="hover-out black thirty-three"><p>33</p></div>
+                <div id="el34" class="hover-out red thirty-four"><p>34</p></div>
+                <div id="el35" class="hover-out black thirty-five"><p>35</p></div>
+                <div id="el36" class="hover-out red thirty-six"><p>36</p></div>
+            </div>
+
+            <div class ="two-for-one-container">
+                <div class="two-for-one" class="t41a" id="t41a"><p class="side-text">2 FOR 1</p></div>
+                <div class="two-for-one" class="t41b" id="t41b"><p class="side-text">2 FOR 1</p></div>
+                <div class="two-for-one" class="t41c" id="t41c"><p class="side-text">2 FOR 1</p></div>
+            </div>
+
+            <div class ="twelves-container">
+                <div class="first-twelve"><p class="bottom-board">1 TO 12</p></div>
+                <div class="second-twelve"><p class="bottom-board">13 TO 24</p></div>
+                <div class="third-twelve"><p class="bottom-board">25 TO 36</p></div>
+            </div>
+
+            <div class ="outer-container">
+                <div class="first-eighteen"><p class="bottom-board">1 TO 18</p></div>
+                <div class="odd"><p class="bottom-board">ODD</p></div>
+                <div class="red-outer"><p class="bottom-board">RED</p></div>
+                <div class="black-outer"><p class="bottom-board">BLACK</p></div>
+                <div class="even"><p class="bottom-board">EVEN</p></div>
+                <div class="last-eighteen"><p class="bottom-board">19 TO 36</p></div>
+            </div>
+
+        </div>
+    </main>
+    <div class="wheel">
+        <div class="chip-options"></div>
+        <div class="roulette-spin-animation">
+            <div class="scene">
+                <div class="roulette">
+                  <div class="roulette-cell">0</div>
+                  <div class="roulette-cell">28</div>
+                  <div class="roulette-cell">9</div>
+                  <div class="roulette-cell">26</div>
+                  <div class="roulette-cell">30</div>
+                  <div class="roulette-cell">11</div>
+                  <div class="roulette-cell">7</div>
+                  <div class="roulette-cell">20</div>
+                  <div class="roulette-cell">32</div>
+                  <div class="roulette-cell">17</div>
+                  <div class="roulette-cell">5</div>
+                  <div class="roulette-cell">22</div>
+                  <div class="roulette-cell">34</div>
+                  <div class="roulette-cell">15</div>
+                  <div class="roulette-cell">3</div>
+                  <div class="roulette-cell">24</div>
+                  <div class="roulette-cell">36</div>
+                  <div class="roulette-cell">13</div>
+                  <div class="roulette-cell">1</div>
+                  <div class="roulette-cell">00</div>
+                  <div class="roulette-cell">27</div>
+                  <div class="roulette-cell">10</div>
+                  <div class="roulette-cell">25</div>
+                  <div class="roulette-cell">29</div>
+                  <div class="roulette-cell">12</div>
+                  <div class="roulette-cell">8</div>
+                  <div class="roulette-cell">19</div>
+                  <div class="roulette-cell">31</div>
+                  <div class="roulette-cell">18</div>
+                  <div class="roulette-cell">6</div>
+                  <div class="roulette-cell">21</div>
+                  <div class="roulette-cell">33</div>
+                  <div class="roulette-cell">16</div>
+                  <div class="roulette-cell">4</div>
+                  <div class="roulette-cell">23</div>
+                  <div class="roulette-cell">35</div>
+                  <div class="roulette-cell">14</div>
+                  <div class="roulette-cell">2</div>
+                </div>
+            </div>
+        </div>
+        <div class="roulette-buttons">
+            <div class="roulette-options">
+                <p>
+                    <button class="spin-button">SPIN!</button>
+                </p>                
+            </div>
+        </div>
+    </div>
+<aside class="right">#</aside>
+<footer class="general-footer"></footer>
+<script src="js/script.js"></script>
+</body>
+</html>
