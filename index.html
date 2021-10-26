@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette</title>
+    
+    <link rel="stylesheet" href="assets/styles/reset.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.2/lib/draggable.min.js"></script>
+    <script defer src="./assets/js/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Spirax&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Make container for gamescreen -->
+  <section id="container">
+    <section id="title">Roulette!</section>
+    <section id="past-spin-list"></section>
+    <section id="game-board">
+      <div class="green board-cell" id="_dbzr">00</div>
+      <div class="green board-cell" id="_0">0</div>
+      <div class="bc-2f1-3 first-half first-dozen red odd board-cell" id="_1">1</div>
+      <div class="bc-2f1-2 first-half first-dozen black even bc-2f1-2 bc board-cell" id="_2">2</div>
+      <div class="bc-2f1-1 first-half first-dozen red odd board-cell" id="_3">3</div>
+      <div class="bc-2f1-3 first-half first-dozen black even board-cell" id="_4">4</div>
+      <div class="bc-2f1-2 first-half first-dozen red odd board-cell" id="_5">5</div>
+      <div class="bc-2f1-1 first-half first-dozen black even board-cell" id="_6">6</div>
+      <div class="bc-2f1-3 first-half first-dozen red odd board-cell" id="_7" >7</div>
+      <div class="bc-2f1-2 first-half first-dozen black even board-cell" id="_8">8</div>
+      <div class="bc-2f1-1 first-half first-dozen red odd board-cell" id="_9">9</div>
+      <div class="bc-2f1-3 first-half first-dozen black even board-cell" id="_10">10</div>
+      <div class="bc-2f1-2 first-half first-dozen black odd board-cell" id="_11">11</div>
+      <div class="bc-2f1-1 first-half first-dozen red even board-cell" id="_12">12</div>
+      <div class="bc-2f1-3 first-half second-dozen black odd board-cell" id="_13">13</div>
+      <div class="bc-2f1-2 first-half second-dozen red even board-cell" id="_14">14</div>
+      <div class="bc-2f1-1 first-half second-dozen black odd board-cell" id="_15">15</div>
+      <div class="bc-2f1-3 first-half second-dozen red even board-cell" id="_16">16</div>
+      <div class="bc-2f1-2 first-half second-dozen black odd board-cell" id="_17">17</div>
+      <div class="bc-2f1-1 first-half second-dozen red even board-cell" id="_18">18</div>
+      <div class="bc-2f1-3 second-half second-dozen red odd board-cell" id="_19">19</div>
+      <div class="bc-2f1-2 second-half second-dozen black even board-cell" id="_20">20</div>
+      <div class="bc-2f1-1 second-half second-dozen red odd board-cell" id="_21">21</div>
+      <div class="bc-2f1-3 second-half second-dozen black even board-cell" id="_22">22</div>
+      <div class="bc-2f1-2 second-half second-dozen red odd board-cell" id="_23">23</div>
+      <div class="bc-2f1-1 second-half second-dozen black even board-cell" id="_24">24</div>
+      <div class="bc-2f1-3 second-half third-dozen red odd board-cell" id="_25">25</div>
+      <div class="bc-2f1-2 second-half third-dozen black even board-cell" id="_26">26</div>
+      <div class="bc-2f1-1 second-half third-dozen red odd board-cell" id="_27">27</div>
+      <div class="bc-2f1-3 second-half third-dozen black even board-cell" id="_28">28</div>
+      <div class="bc-2f1-2 second-half third-dozen black odd board-cell" id="_29">29</div>
+      <div class="bc-2f1-1 second-half third-dozen red even board-cell" id="_30">30</div>
+      <div class="bc-2f1-3 second-half third-dozen black odd board-cell" id="_31">31</div>
+      <div class="bc-2f1-2 second-half third-dozen red even board-cell" id="_32">32</div>
+      <div class="bc-2f1-1 second-half third-dozen black odd board-cell" id="_33">33</div>
+      <div class="bc-2f1-3 second-half third-dozen red even board-cell" id="_34">34</div>
+      <div class="bc-2f1-2 second-half third-dozen black odd board-cell" id="_35">35</div>
+      <div class="bc-2f1-1 second-half third-dozen red even board-cell" id="_36">36</div>
+      <div class=" _2for1-cell" id="_2f1-1">2 for 1</div>
+      <div class=" _2for1-cell" id="_2f1-2">2 for 1</div>
+      <div class=" _2for1-cell" id="_2f1-3">2 for 1</div>
+      <div class="betting-board-cell" id="_1to12-cell">1 TO 12</div>
+      <div class="betting-board-cell" id="_13to24-cell">13 TO 24</div>
+      <div class="betting-board-cell" id="_25to36-cell">25 TO 36</div>
+      <div class="betting-board-cell" id="_1to18-cell">1 TO 18</div>
+      <div class="betting-board-cell" id="odd-cell">ODD</div>
+      <div class="betting-board-cell" id="red-cell">RED</div>
+      <div class="betting-board-cell" id="black-cell">BLACK</div>
+      <div class="betting-board-cell" id="even-cell">EVEN</div>
+      <div class="betting-board-cell" id="_19to36-cell">19 TO 36</div>  
+      <!-- placed chips -->
+      <div class="placed-chips" id="chips-center-dbzr"></div>
+      <div class="placed-chips" id="chips-center-0"></div>
+      <div class="placed-chips" id="chips-center-1"></div>
+      <div class="placed-chips" id="chips-center-2"></div>
+      <div class="placed-chips" id="chips-center-3"></div>
+      <div class="placed-chips" id="chips-center-4"></div>
+      <div class="placed-chips" id="chips-center-5"></div>
+      <div class="placed-chips" id="chips-center-6"></div>
+      <div class="placed-chips" id="chips-center-7"></div>
+      <div class="placed-chips" id="chips-center-8"></div>
+      <div class="placed-chips" id="chips-center-9"></div>
+      <div class="placed-chips" id="chips-center-10"></div>
+      <div class="placed-chips" id="chips-center-11"></div>
+      <div class="placed-chips" id="chips-center-12"></div>
+      <div class="placed-chips" id="chips-center-13"></div>
+      <div class="placed-chips" id="chips-center-14"></div>
+      <div class="placed-chips" id="chips-center-15"></div>
+      <div class="placed-chips" id="chips-center-16"></div>
+      <div class="placed-chips" id="chips-center-17"></div>
+      <div class="placed-chips" id="chips-center-18"></div>
+      <div class="placed-chips" id="chips-center-19"></div>
+      <div class="placed-chips" id="chips-center-20"></div>
+      <div class="placed-chips" id="chips-center-21"></div>
+      <div class="placed-chips" id="chips-center-22"></div>
+      <div class="placed-chips" id="chips-center-23"></div>
+      <div class="placed-chips" id="chips-center-24"></div>
+      <div class="placed-chips" id="chips-center-25"></div>
+      <div class="placed-chips" id="chips-center-26"></div>
+      <div class="placed-chips" id="chips-center-27"></div>
+      <div class="placed-chips" id="chips-center-28"></div>
+      <div class="placed-chips" id="chips-center-29"></div>
+      <div class="placed-chips" id="chips-center-30"></div>
+      <div class="placed-chips" id="chips-center-31"></div>
+      <div class="placed-chips" id="chips-center-32"></div>
+      <div class="placed-chips" id="chips-center-33"></div>
+      <div class="placed-chips" id="chips-center-34"></div>
+      <div class="placed-chips" id="chips-center-35"></div>
+      <div class="placed-chips" id="chips-center-36"></div>
+      <div class="placed-chips" id="chips-dbzr-2-3"></div>
+      <div class="placed-chips" id="chips-dbzr-0-2"></div>
+      <div class="placed-chips" id="chips-0-1-2"></div>
+      <div class="placed-chips" id="chips-1-2-4-5"></div>
+      <div class="placed-chips" id="chips-2-3-5-6"></div>
+      <div class="placed-chips" id="chips-4-5-7-8"></div>
+      <div class="placed-chips" id="chips-5-6-8-9"></div>
+      <div class="placed-chips" id="chips-7-8-10-11"></div>
+      <div class="placed-chips" id="chips-8-9-11-12"></div>
+      <div class="placed-chips" id="chips-10-11-13-14"></div>
+      <div class="placed-chips" id="chips-11-12-14-15"></div>
+      <div class="placed-chips" id="chips-13-14-16-17"></div>
+      <div class="placed-chips" id="chips-14-15-17-18"></div>
+      <div class="placed-chips" id="chips-16-17-19-20"></div>
+      <div class="placed-chips" id="chips-17-18-20-21"></div>
+      <div class="placed-chips" id="chips-19-20-22-23"></div>
+      <div class="placed-chips" id="chips-20-21-23-24"></div>
+      <div class="placed-chips" id="chips-22-23-25-26"></div>
+      <div class="placed-chips" id="chips-23-24-26-27"></div>
+      <div class="placed-chips" id="chips-25-26-28-29"></div>
+      <div class="placed-chips" id="chips-26-27-29-30"></div>
+      <div class="placed-chips" id="chips-28-29-31-32"></div>
+      <div class="placed-chips" id="chips-29-30-32-33"></div>
+      <div class="placed-chips" id="chips-31-32-34-35"></div>
+      <div class="placed-chips" id="chips-32-33-35-36"></div>
+      <div class="placed-chips" id="chips-dbzr-0"></div>
+      <div class="placed-chips" id="chips-dbzr-2"></div>
+      <div class="placed-chips" id="chips-dbzr-3"></div>
+      <div class="placed-chips" id="chips-0-2"></div>
+      <div class="placed-chips" id="chips-0-1"></div>
+      <div class="placed-chips" id="chips-1-2"></div>
+      <div class="placed-chips" id="chips-1-4"></div>
+      <div class="placed-chips" id="chips-2-3"></div>
+      <div class="placed-chips" id="chips-2-5"></div>
+      <div class="placed-chips" id="chips-3-6"></div>
+      <div class="placed-chips" id="chips-4-5"></div>
+      <div class="placed-chips" id="chips-4-7"></div>
+      <div class="placed-chips" id="chips-5-6"></div>
+      <div class="placed-chips" id="chips-5-8"></div>
+      <div class="placed-chips" id="chips-6-9"></div>
+      <div class="placed-chips" id="chips-7-8"></div>
+      <div class="placed-chips" id="chips-7-10"></div>
+      <div class="placed-chips" id="chips-8-9"></div>
+      <div class="placed-chips" id="chips-8-11"></div>
+      <div class="placed-chips" id="chips-9-12"></div>
+      <div class="placed-chips" id="chips-10-11"></div>
+      <div class="placed-chips" id="chips-10-13"></div>
+      <div class="placed-chips" id="chips-11-12"></div>
+      <div class="placed-chips" id="chips-11-14"></div>
+      <div class="placed-chips" id="chips-12-15"></div>
+      <div class="placed-chips" id="chips-13-14"></div>
+      <div class="placed-chips" id="chips-13-16"></div>
+      <div class="placed-chips" id="chips-14-15"></div>
+      <div class="placed-chips" id="chips-14-17"></div>
+      <div class="placed-chips" id="chips-15-18"></div>
+      <div class="placed-chips" id="chips-16-17"></div>
+      <div class="placed-chips" id="chips-16-19"></div>
+      <div class="placed-chips" id="chips-17-18"></div>
+      <div class="placed-chips" id="chips-17-20"></div>
+      <div class="placed-chips" id="chips-18-21"></div>
+      <div class="placed-chips" id="chips-19-20"></div>
+      <div class="placed-chips" id="chips-19-22"></div>
+      <div class="placed-chips" id="chips-20-21"></div>
+      <div class="placed-chips" id="chips-20-23"></div>
+      <div class="placed-chips" id="chips-21-24"></div>
+      <div class="placed-chips" id="chips-22-23"></div>
+      <div class="placed-chips" id="chips-22-25"></div>
+      <div class="placed-chips" id="chips-23-24"></div>
+      <div class="placed-chips" id="chips-23-26"></div>
+      <div class="placed-chips" id="chips-24-27"></div>
+      <div class="placed-chips" id="chips-25-26"></div>
+      <div class="placed-chips" id="chips-25-28"></div>
+      <div class="placed-chips" id="chips-26-27"></div>
+      <div class="placed-chips" id="chips-26-29"></div>
+      <div class="placed-chips" id="chips-27-30"></div>
+      <div class="placed-chips" id="chips-28-29"></div>
+      <div class="placed-chips" id="chips-28-31"></div>
+      <div class="placed-chips" id="chips-29-30"></div>
+      <div class="placed-chips" id="chips-29-32"></div>
+      <div class="placed-chips" id="chips-30-33"></div>
+      <div class="placed-chips" id="chips-31-32"></div>
+      <div class="placed-chips" id="chips-31-34"></div>
+      <div class="placed-chips" id="chips-32-33"></div>
+      <div class="placed-chips" id="chips-32-35"></div>
+      <div class="placed-chips" id="chips-33-36"></div>
+      <div class="placed-chips" id="chips-34-35"></div>
+      <div class="placed-chips" id="chips-35-36"></div>
+      <div class="placed-chips" id="chips-outer-2f1-1"></div>
+      <div class="placed-chips" id="chips-outer-2f1-2"></div>
+      <div class="placed-chips" id="chips-outer-2f1-3"></div>
+      <div class="placed-chips" id="chips-outer-1to12"></div>
+      <div class="placed-chips" id="chips-outer-13to24"></div>
+      <div class="placed-chips" id="chips-outer-25to36"></div>
+      <div class="placed-chips" id="chips-outer-1to18"></div>
+      <div class="placed-chips" id="chips-outer-odd"></div>
+      <div class="placed-chips" id="chips-outer-red"></div>
+      <div class="placed-chips" id="chips-outer-black"></div>
+      <div class="placed-chips" id="chips-outer-even"></div>
+      <div class="placed-chips" id="chips-outer-19to36"></div>
+      <!-- betting segment -->
+      <div class="bet center" id="center-dbzr"></div>
+      <div class="bet center" id="center-0"></div>
+      <div class="bet center" id="center-1"></div>
+      <div class="bet center" id="center-2"></div>
+      <div class="bet center" id="center-3"></div>
+      <div class="bet center" id="center-4"></div>
+      <div class="bet center" id="center-5"></div>
+      <div class="bet center" id="center-6"></div>
+      <div class="bet center" id="center-7"></div>
+      <div class="bet center" id="center-8"></div>
+      <div class="bet center" id="center-9"></div>
+      <div class="bet center" id="center-10"></div>
+      <div class="bet center" id="center-11"></div>
+      <div class="bet center" id="center-12"></div>
+      <div class="bet center" id="center-13"></div>
+      <div class="bet center" id="center-14"></div>
+      <div class="bet center" id="center-15"></div>
+      <div class="bet center" id="center-16"></div>
+      <div class="bet center" id="center-17"></div>
+      <div class="bet center" id="center-18"></div>
+      <div class="bet center" id="center-19"></div>
+      <div class="bet center" id="center-20"></div>
+      <div class="bet center" id="center-21"></div>
+      <div class="bet center" id="center-22"></div>
+      <div class="bet center" id="center-23"></div>
+      <div class="bet center" id="center-24"></div>
+      <div class="bet center" id="center-25"></div>
+      <div class="bet center" id="center-26"></div>
+      <div class="bet center" id="center-27"></div>
+      <div class="bet center" id="center-28"></div>
+      <div class="bet center" id="center-29"></div>
+      <div class="bet center" id="center-30"></div>
+      <div class="bet center" id="center-31"></div>
+      <div class="bet center" id="center-32"></div>
+      <div class="bet center" id="center-33"></div>
+      <div class="bet center" id="center-34"></div>
+      <div class="bet center" id="center-35"></div>
+      <div class="bet center" id="center-36"></div>
+      <div class="bet corner" id="_dbzr-2-3"></div>
+      <div class="bet corner" id="_dbzr-0-2"></div>
+      <div class="bet corner" id="_0-1-2"></div>
+      <div class="bet corner" id="_1-2-4-5"></div>
+      <div class="bet corner" id="_2-3-5-6"></div>
+      <div class="bet corner" id="_4-5-7-8"></div>
+      <div class="bet corner" id="_5-6-8-9"></div>
+      <div class="bet corner" id="_7-8-10-11"></div>
+      <div class="bet corner" id="_8-9-11-12"></div>
+      <div class="bet corner" id="_10-11-13-14"></div>
+      <div class="bet corner" id="_11-12-14-15"></div>
+      <div class="bet corner" id="_13-14-16-17"></div>
+      <div class="bet corner" id="_14-15-17-18"></div>
+      <div class="bet corner" id="_16-17-19-20"></div>
+      <div class="bet corner" id="_17-18-20-21"></div>
+      <div class="bet corner" id="_19-20-22-23"></div>
+      <div class="bet corner" id="_20-21-23-24"></div>
+      <div class="bet corner" id="_22-23-25-26"></div>
+      <div class="bet corner" id="_23-24-26-27"></div>
+      <div class="bet corner" id="_25-26-28-29"></div>
+      <div class="bet corner" id="_26-27-29-30"></div>
+      <div class="bet corner" id="_28-29-31-32"></div>
+      <div class="bet corner" id="_29-30-32-33"></div>
+      <div class="bet corner" id="_31-32-34-35"></div>
+      <div class="bet corner" id="_32-33-35-36"></div>
+      <div class="bet edge" id="_dbzr-0"></div>
+      <div class="bet edge" id="_dbzr-2"></div>
+      <div class="bet edge" id="_dbzr-3"></div>
+      <div class="bet edge" id="_0-2"></div>
+      <div class="bet edge" id="_0-1"></div>
+      <!-- Make container for -->
+      <div class="bet edge" id="_1-2"></div>
+      <div class="bet edge" id="_1-4"></div>
+      <div class="bet edge" id="_2-3"></div>
+      <div class="bet edge" id="_2-5"></div>
+      <div class="bet edge" id="_3-6"></div>
+      <div class="bet edge" id="_4-5"></div>
+      <div class="bet edge" id="_4-7"></div>
+      <div class="bet edge" id="_5-6"></div>
+      <div class="bet edge" id="_5-8"></div>
+      <div class="bet edge" id="_6-9"></div>
+      <div class="bet edge" id="_7-8"></div>
+      <div class="bet edge" id="_7-10"></div>
+      <div class="bet edge" id="_8-9"></div>
+      <div class="bet edge" id="_8-11"></div>
+      <div class="bet edge" id="_9-12"></div>
+      <div class="bet edge" id="_10-11"></div>
+      <div class="bet edge" id="_10-13"></div>
+      <div class="bet edge" id="_11-12"></div>
+      <div class="bet edge" id="_11-14"></div>
+      <div class="bet edge" id="_12-15"></div>
+      <div class="bet edge" id="_13-14"></div>
+      <div class="bet edge" id="_13-16"></div>
+      <div class="bet edge" id="_14-15"></div>
+      <div class="bet edge" id="_14-17"></div>
+      <div class="bet edge" id="_15-18"></div>
+      <div class="bet edge" id="_16-17"></div>
+      <div class="bet edge" id="_16-19"></div>
+      <div class="bet edge" id="_17-18"></div>
+      <div class="bet edge" id="_17-20"></div>
+      <div class="bet edge" id="_18-21"></div>
+      <div class="bet edge" id="_19-20"></div>
+      <div class="bet edge" id="_19-22"></div>
+      <div class="bet edge" id="_20-21"></div>
+      <div class="bet edge" id="_20-23"></div>
+      <div class="bet edge" id="_21-24"></div>
+      <div class="bet edge" id="_22-23"></div>
+      <div class="bet edge" id="_22-25"></div>
+      <div class="bet edge" id="_23-24"></div>
+      <div class="bet edge" id="_23-26"></div>
+      <div class="bet edge" id="_24-27"></div>
+      <div class="bet edge" id="_25-26"></div>
+      <div class="bet edge" id="_25-28"></div>
+      <div class="bet edge" id="_26-27"></div>
+      <div class="bet edge" id="_26-29"></div>
+      <div class="bet edge" id="_27-30"></div>
+      <div class="bet edge" id="_28-29"></div>
+      <div class="bet edge" id="_28-31"></div>
+      <div class="bet edge" id="_29-30"></div>
+      <div class="bet edge" id="_29-32"></div>
+      <div class="bet edge" id="_30-33"></div>
+      <div class="bet edge" id="_31-32"></div>
+      <div class="bet edge" id="_31-34"></div>
+      <div class="bet edge" id="_32-33"></div>
+      <div class="bet edge" id="_32-35"></div>
+      <div class="bet edge" id="_33-36"></div>
+      <div class="bet edge" id="_34-35"></div>
+      <div class="bet edge" id="_35-36"></div>
+      <div class="bet" id="outer-2f1-1"></div>
+      <div class="bet" id="outer-2f1-2"></div>
+      <div class="bet" id="outer-2f1-3"></div>
+      <div class="bet" id="outer-1to12"></div>
+      <div class="bet" id="outer-13to24"></div>
+      <div class="bet" id="outer-25to36"></div>
+      <div class="bet" id="outer-1to18"></div>
+      <div class="bet" id="outer-odd"></div>
+      <div class="bet" id="outer-red"></div>
+      <div class="bet" id="outer-black"></div>
+      <div class="bet" id="outer-even"></div>
+      <div class="bet" id="outer-19to36"></div>
+    </section>
+      <section id="alert"></section>
+    <section class="chips" id="chip-selector">
+      <div class="user-chips-section" id='chip-label-50'>50</div>
+      <div class="user-chips-section chip-stack" id='chip-stack-50'></div>
+      <div class="user-chips-section" id='chip-count-50'></div>
+      <div class="user-chips-section" id='chip-label-100'>100</div>
+      <div class="user-chips-section chip-stack" id='chip-stack-100'></div>
+      <div class="user-chips-section" id='chip-count-100'></div>
+      <div class="user-chips-section" id='chip-label-200'>200</div>
+      <div class="user-chips-section chip-stack" id='chip-stack-200'></div>
+      <div class="user-chips-section" id='chip-count-200'></div>
+      <div class="user-chips-section" id='chip-label-500'>500</div>
+      <div class="user-chips-section chip-stack" id='chip-stack-500'></div>
+      <div class="user-chips-section" id='chip-count-500'></div>
+      <div class="user-chips-section" id='chip-total-label'>Total</div>
+      <div class="user-chips-section" id='chip-total-count'></div>
+    </section>
+    <section class="wheel" id="wheel">
+      <div class="roulette-spin-animation">
+        <div class="scene">
+          <div class="roulette">
+            <div class="green-roulette roulette-cell">0</div>
+            <div class="black-roulette roulette-cell">28</div>
+            <div class="red-roulette roulette-cell">9</div>
+            <div class="black-roulette roulette-cell">26</div>
+            <div class="red-roulette roulette-cell">30</div>
+            <div class="black-roulette roulette-cell">11</div>
+            <div class="red-roulette roulette-cell">7</div>
+            <div class="black-roulette roulette-cell">20</div>
+            <div class="red-roulette roulette-cell">32</div>
+            <div class="black-roulette roulette-cell">17</div>
+            <div class="red-roulette roulette-cell">5</div>
+            <div class="black-roulette roulette-cell">22</div>
+            <div class="red-roulette roulette-cell">34</div>
+            <div class="black-roulette roulette-cell">15</div>
+            <div class="red-roulette roulette-cell">3</div>
+            <div class="black-roulette roulette-cell">24</div>
+            <div class="red-roulette roulette-cell">36</div>
+            <div class="black-roulette roulette-cell">13</div>
+            <div class="red-roulette roulette-cell">1</div>
+            <div class="green-roulette roulette-cell">00</div>
+            <div class="red-roulette roulette-cell">27</div>
+            <div class="black-roulette roulette-cell">10</div>
+            <div class="red-roulette roulette-cell">25</div>
+            <div class="black-roulette roulette-cell">29</div>
+            <div class="red-roulette roulette-cell">12</div>
+            <div class="black-roulette roulette-cell">8</div>
+            <div class="red-roulette roulette-cell">19</div>
+            <div class="black-roulette roulette-cell">31</div>
+            <div class="red-roulette roulette-cell">18</div>
+            <div class="black-roulette roulette-cell">6</div>
+            <div class="red-roulette roulette-cell">21</div>
+            <div class="black-roulette roulette-cell">33</div>
+            <div class="red-roulette roulette-cell">16</div>
+            <div class="black-roulette roulette-cell">4</div>
+            <div class="red-roulette roulette-cell">23</div>
+            <div class="black-roulette roulette-cell">35</div>
+            <div class="red-roulette roulette-cell">14</div>
+            <div class="black-roulette roulette-cell">2</div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <button id="spin-button">Spin</button>
+    <section class="alert" id="alert">
+      <div class="alert-item" id="alert-banner">Place a Bet and Click Spin!</div>
+      <div class="alert-item" id="past-spins"></div>
+    </section>
+  </section>
+</body>
+</html>
