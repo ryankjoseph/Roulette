@@ -1,0 +1,2316 @@
+:root{
+  --middle-cell-row-span: 8;
+  --middle-cell-column-span: 4;
+  --middle-cell-row-multiplier:5
+}
+
+html{
+  background: linear-gradient(65deg, rgb(31, 70, 31),black 90%);        
+  color: white;
+}
+
+.board-cell,.betting-board-cell,._2for1-cell{
+  border: 2px white solid;
+  min-height:100px;
+  color:white;
+  text-align: center;
+  font-family:'Lobster', cursive;
+  letter-spacing: 1px;
+}
+
+.board-cell{
+  text-align:right;
+}
+
+.green{
+  background-image: url(../img/jester_hat_green.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color:white;
+}
+
+.red{
+  background-image: url(../img/jester_hat_rd.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color:white;
+}
+
+.black{
+  background-image: url(../img/jester_hat_blk.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color:white
+}
+
+#game-board{
+  /* grid-area: 2/2/2/2; */
+  display: grid;
+  background-image: linear-gradient(to right,rgb(6, 63, 6), black);
+  grid-template-rows: repeat(24,1fr) repeat(4,3fr);
+  grid-template-columns:1.8fr repeat(50,0.612fr) 3.1fr;
+  min-width:1173px;
+  /* max-height:50vh; */
+  grid-auto-columns:minmax(200px)
+}
+
+#_dbzr{
+  display: grid;
+  grid-area: 1/1/span 12/span 2;
+}
+
+#_0{
+  display: grid;
+  grid-area: 13/1/span 12/span 2;
+}
+
+#_1{
+  display: grid;
+  grid-area: 17/3/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_2{
+  display: grid;
+  grid-area: 9/3/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_3{
+  display: grid;
+  grid-area: 1/3/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_4{
+  display: grid;
+  grid-area: 17/7/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_5{
+  display: grid;
+  grid-area: 9/7/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_6{
+  display: grid;
+  grid-area: 1/7/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_7{
+  display: grid;
+  grid-area: 17/11/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_8{
+  display: grid;
+  grid-area: 9/11/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_9{
+  display: grid;
+  grid-area: 1/11/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_10{
+  display: grid;
+  grid-area: 17/15/span var(--middle-cell-row-span)/span var(--middle-cell-column-span)
+}
+
+#_11{
+  display: grid;
+  grid-area: 9/15/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_12{
+  display: grid;
+  grid-area: 1/15/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_13{
+  display: grid;
+  grid-area: 17/19/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_14{
+  display: grid;
+  grid-area: 9/19/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_15{
+  display: grid;
+  grid-area: 1/19/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_16{
+  display: grid;
+  grid-area: 17/23/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_17{
+  display: grid;
+  grid-area: 9/23/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_18{
+  display: grid;
+  grid-area: 1/23/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_19{
+  display: grid;
+  grid-area: 17/27/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_20{
+  display: grid;
+  grid-area: 9/27/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_21{
+  display: grid;
+  grid-area: 1/27/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_22{
+  display: grid;
+  grid-area: 17/31/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_23{
+  display: grid;
+  grid-area: 9/31/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_24{
+  display: grid;
+  grid-area: 1/31/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_25{
+  display: grid;
+  grid-area: 17/35/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_26{
+  display: grid;
+  grid-area: 9/35/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_27{
+  display: grid;
+  grid-area: 1/35/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_28{
+  display: grid;
+  grid-area: 17/39/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_29{
+  display: grid;
+  grid-area: 9/39/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_30{
+  display: grid;
+  grid-area: 1/39/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_31{
+  display: grid;
+  grid-area: 17/43/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_32{
+  display: grid;
+  grid-area: 9/43/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_33{
+  display: grid;
+  grid-area: 1/43/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_34{
+  display: grid;
+  grid-area: 17/47/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_35{
+  display: grid;
+  grid-area: 9/47/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_36{
+  display: grid;
+  grid-area: 1/47/span var(--middle-cell-row-span)/span var(--middle-cell-column-span);
+}
+
+#_2f1-1,#outer-2f1-1{
+  display: grid;
+  grid-area: 1/51/span var(--middle-cell-row-span)/span 2;
+}
+
+#_2f1-2,#outer-2f1-2{
+  display: grid;
+  grid-area: 9/51/span var(--middle-cell-row-span)/span 2;
+}
+
+#_2f1-3,#outer-2f1-3{
+  display: grid;
+  grid-area: 17/51/span var(--middle-cell-row-span)/span 2;
+}
+
+#_1to12-cell,#outer-1to12{
+  display: grid;
+  grid-area: 25/3/span 2/span 16;
+}
+
+#_13to24-cell,#outer-13to24{
+  display: grid;
+  grid-area: 25/19/span 2/span 16;
+}
+
+#_25to36-cell,#outer-25to36{
+  display: grid;
+  grid-area: 25/35/span 2/span 16;
+}
+
+#_1to18-cell,#outer-1to18{
+  display: grid;
+  grid-area: 27/3/span 2/span 8;
+}
+
+#odd-cell,#outer-odd{
+  display: grid;
+  grid-area: 27/11/span 2/span 8;
+}
+
+#red-cell,#outer-red{
+  display: grid;
+  grid-area: 27/19/span 2/span 8;
+}
+
+#black-cell,#outer-black{
+  display: grid;
+  grid-area: 27/27/span 2/span 8;
+}
+
+#even-cell,#outer-even{
+  display: grid;
+  grid-area: 27/35/span 2/span 8;
+}
+
+#_19to36-cell,#outer-19to36{
+  display: grid;
+  grid-area: 27/43/span 2/span 8;
+}
+
+
+/* chips segment */
+.placed-chips{
+  z-index:101;
+  position:relative;
+}
+
+#chips-center-dbzr{
+  display: grid;
+  grid-area: 6/1/span 2/span 1
+}
+
+#chips-center-0{
+  display: grid;
+  grid-area: 18/1/span 2/span 1
+}
+
+#chips-center-1{
+  display: grid;
+  grid-area: 20/4/span 2/span 2;
+}
+
+#chips-center-2{
+  display: grid;
+  grid-area: 12/4/span 2/span 2;
+}
+
+#chips-center-3{
+  display: grid;
+  grid-area: 4/4/span 2/span 2;
+}
+
+#chips-center-4{
+  display: grid;
+  grid-area: 20/8/span 2/span 2;
+}
+
+#chips-center-5{
+  display: grid;
+  grid-area: 12/8/span 2/span 2;
+}
+
+#chips-center-6{
+  display: grid;
+  grid-area: 4/8/span 2/span 2;
+}
+
+#chips-center-7{
+  display: grid;
+  grid-area: 20/12/span 2/span 2;
+}
+
+#chips-center-8{
+  display: grid;
+  grid-area: 12/12/span 2/span 2;
+}
+
+#chips-center-9{
+  display: grid;
+  grid-area: 4/12/span 2/span 2;
+}
+
+#chips-center-10{
+  display: grid;
+  grid-area: 20/16/span 2/span 2;
+}
+
+#chips-center-11{
+  display: grid;
+  grid-area: 12/16/span 2/span 2;
+}
+
+#chips-center-12{
+  display: grid;
+  grid-area: 4/16/span 2/span 2;
+}
+
+#chips-center-13{
+  display: grid;
+  grid-area: 20/20/span 2/span 2;
+}
+
+#chips-center-14{
+  display: grid;
+  grid-area: 12/20/span 2/span 2;
+}
+
+#chips-center-15{
+  display: grid;
+  grid-area: 4/20/span 2/span 2;
+}
+
+#chips-center-16{
+  display: grid;
+  grid-area: 20/24/span 2/span 2;
+}
+
+#chips-center-17{
+  display: grid;
+  grid-area: 12/24/span 2/span 2;
+}
+
+#chips-center-18{
+  display: grid;
+  grid-area: 4/24/span 2/span 2;
+}
+
+#chips-center-19{
+  display: grid;
+  grid-area: 20/28/span 2/span 2;
+}
+
+#chips-center-20{
+  display: grid;
+  grid-area: 12/28/span 2/span 2;
+}
+
+#chips-center-21{
+  display: grid;
+  grid-area: 4/28/span 2/span 2;
+}
+
+#chips-center-22{
+  display: grid;
+  grid-area: 20/32/span 2/span 2;
+}
+
+#chips-center-23{
+  display: grid;
+  grid-area: 12/32/span 2/span 2;
+}
+
+#chips-center-24{
+  display: grid;
+  grid-area: 4/32/span 2/span 2;
+}
+
+#chips-center-25{
+  display: grid;
+  grid-area: 20/36/span 2/span 2;
+}
+
+#chips-center-26{
+  display: grid;
+  grid-area: 12/36/span 2/span 2;
+}
+
+#chips-center-27{
+  display: grid;
+  grid-area: 4/36/span 2/span 2;
+}
+
+#chips-center-28{
+  display: grid;
+  grid-area: 20/40/span 2/span 2;
+}
+
+#chips-center-29{
+  display: grid;
+  grid-area: 12/40/span 2/span 2;
+}
+
+#chips-center-30{
+  display: grid;
+  grid-area: 4/40/span 2/span 2;
+}
+
+#chips-center-31{
+  display: grid;
+  grid-area: 20/44/span 2/span 2;
+}
+
+#chips-center-32{
+  display: grid;
+  grid-area: 12/44/span 2/span 2;
+}
+
+#chips-center-33{
+  display: grid;
+  grid-area: 4/44/span 2/span 2;
+}
+
+#chips-center-34{
+  display: grid;
+  grid-area: 20/48/span 2/span 2;
+}
+
+#chips-center-35{
+  display: grid;
+  grid-area: 12/48/span 2/span 2;
+}
+
+#chips-center-36{
+  display: grid;
+  grid-area: 4/48/span 2/span 2;
+}
+
+#chips-dbzr-2-3{
+  display: grid;
+  grid-area: 8/2/span 2/span 2
+}
+
+#chips-dbzr-0-2{
+  display: grid;
+  grid-area: 12/2/span 2/span 2
+}
+
+#chips-0-1-2{
+  display: grid;
+  grid-area: 16/2/span 2/span 2
+}
+
+#chips-1-2-4-5{
+  display: grid;
+  grid-area: 16/6/span 2/span 2;
+}
+
+#chips-2-3-5-6{
+  display: grid;
+  grid-area: 8/6/span 2/span 2;
+}
+
+#chips-4-5-7-8{
+  display: grid;
+  grid-area: 16/10/span 2/span 2;
+}
+
+#chips-5-6-8-9{
+  display: grid;
+  grid-area: 8/10/span 2/span 2;
+}
+
+#chips-7-8-10-11{
+  display: grid;
+  grid-area: 16/14/span 2/span 2;
+}
+
+#chips-8-9-11-12{
+  display: grid;
+  grid-area: 8/14/span 2/span 2;
+}
+
+#chips-10-11-13-14{
+  display: grid;
+  grid-area: 16/18/span 2/span 2;
+}
+
+#chips-11-12-14-15{
+  display: grid;
+  grid-area: 8/18/span 2/span 2;
+}
+
+#chips-13-14-16-17{
+  display: grid;
+  grid-area: 16/22/span 2/span 2;
+}
+
+#chips-14-15-17-18{
+  display: grid;
+  grid-area: 8/22/span 2/span 2;
+}
+
+#chips-16-17-19-20{
+  display: grid;
+  grid-area: 16/26/span 2/span 2;
+}
+
+#chips-17-18-20-21{
+  display: grid;
+  grid-area: 8/26/span 2/span 2;
+}
+
+#chips-19-20-22-23{
+  display: grid;
+  grid-area: 16/30/span 2/span 2;
+}
+
+#chips-20-21-23-24{
+  display: grid;
+  grid-area: 8/30/span 2/span 2;
+}
+
+#chips-22-23-25-26{
+  display: grid;
+  grid-area: 16/34/span 2/span 2;
+}
+
+#chips-23-24-26-27{
+  display: grid;
+  grid-area: 8/34/span 2/span 2;
+}
+
+#chips-25-26-28-29{
+  display: grid;
+  grid-area: 16/38/span 2/span 2;
+}
+
+#chips-26-27-29-30{
+  display: grid;
+  grid-area: 8/38/span 2/span 2;
+}
+
+#chips-28-29-31-32{
+  display: grid;
+  grid-area: 16/42/span 2/span 2;
+}
+
+#chips-29-30-32-33{
+  display: grid;
+  grid-area: 8/42/span 2/span 2;
+}
+
+#chips-31-32-34-35{
+  display: grid;
+  grid-area: 16/46/span 2/span 2;
+}
+
+#chips-32-33-35-36{
+  display: grid;
+  grid-area: 8/46/span 2/span 2;
+}
+
+#chips-dbzr-0{
+  display: grid;
+  grid-area: 12/1/span 2/span 1
+}
+
+#chips-dbzr-2{
+  display: grid;
+  grid-area: 10/2/span 2/span 2
+}
+
+#chips-dbzr-3{
+  display: grid;
+  grid-area: 4/2/span 2/span 2
+}
+
+#chips-0-2{
+  display: grid;
+  grid-area: 14/2/span 2/span 2
+}
+
+#chips-0-1{
+  display: grid;
+  grid-area: 20/2/span 2/span 2
+}
+
+#chips-1-2{
+  display: grid;
+  grid-area: 16/4/span 2/span 2;
+}
+
+#chips-1-4{
+  display: grid;
+  grid-area: 20/6/span 2/span 2;
+}
+
+#chips-2-3{
+  display: grid;
+  grid-area: 8/4/span 2/span 2;
+}
+
+#chips-2-5{
+  display: grid;
+  grid-area: 12/6/span 2/span 2;
+}
+
+#chips-3-6{
+  display: grid;
+  grid-area: 4/6/span 2/span 2;
+}
+
+#chips-4-5{
+  display: grid;
+  grid-area: 16/8/span 2/span 2;
+}
+
+#chips-4-7{
+  display: grid;
+  grid-area: 20/10/span 2/span 2;
+}
+
+#chips-5-6{
+  display: grid;
+  grid-area: 8/8/span 2/span 2;
+}
+
+#chips-5-8{
+  display: grid;
+  grid-area: 12/10/span 2/span 2;
+}
+
+#chips-6-9{
+  display: grid;
+  grid-area: 4/10/span 2/span 2;
+}
+
+#chips-7-8{
+  display: grid;
+  grid-area: 16/12/span 2/span 2;
+}
+
+#chips-7-10{
+  display: grid;
+  grid-area: 20/14/span 2/span 2;
+}
+
+#chips-8-9{
+  display: grid;
+  grid-area: 8/12/span 2/span 2;
+}
+
+#chips-8-11{
+  display: grid;
+  grid-area: 12/14/span 2/span 2;
+}
+
+#chips-9-12{
+  display: grid;
+  grid-area: 4/14/span 2/span 2;
+}
+
+#chips-10-11{
+  display: grid;
+  grid-area: 16/16/span 2/span 2;
+}
+
+#chips-10-13{
+  display: grid;
+  grid-area: 20/18/span 2/span 2;
+}
+
+#chips-11-12{
+  display: grid;
+  grid-area: 8/16/span 2/span 2;
+}
+
+#chips-11-14{
+  display: grid;
+  grid-area: 12/18/span 2/span 2;
+}
+
+#chips-12-15{
+  display: grid;
+  grid-area: 4/18/span 2/span 2;
+}
+
+#chips-13-14{
+  display: grid;
+  grid-area: 16/20/span 2/span 2;
+}
+
+#chips-13-16{
+  display: grid;
+  grid-area: 20/22/span 2/span 2;
+}
+
+#chips-14-15{
+  display: grid;
+  grid-area: 8/20/span 2/span 2;
+}
+
+#chips-14-17{
+  display: grid;
+  grid-area: 12/22/span 2/span 2;
+}
+
+#chips-15-18{
+  display: grid;
+  grid-area: 4/22/span 2/span 2;
+}
+
+#chips-16-17{
+  display: grid;
+  grid-area: 16/24/span 2/span 2;
+}
+
+#chips-16-19{
+  display: grid;
+  grid-area: 20/26/span 2/span 2;
+}
+
+#chips-17-18{
+  display: grid;
+  grid-area: 8/24/span 2/span 2;
+}
+
+#chips-17-20{
+  display: grid;
+  grid-area: 12/26/span 2/span 2;
+}
+
+#chips-18-21{
+  display: grid;
+  grid-area: 4/26/span 2/span 2;
+}
+
+#chips-19-20{
+  display: grid;
+  grid-area: 16/28/span 2/span 2;
+}
+
+#chips-19-22{
+  display: grid;
+  grid-area: 20/30/span 2/span 2;
+}
+
+#chips-20-21{
+  display: grid;
+  grid-area: 8/28/span 2/span 2;
+}
+
+#chips-20-23{
+  display: grid;
+  grid-area: 12/30/span 2/span 2;
+}
+
+#chips-21-24{
+  display: grid;
+  grid-area: 4/30/span 2/span 2;
+}
+
+#chips-22-23{
+  display: grid;
+  grid-area: 16/32/span 2/span 2;
+}
+
+#chips-22-25{
+  display: grid;
+  grid-area: 20/34/span 2/span 2;
+}
+
+#chips-23-24{
+  display: grid;
+  grid-area: 8/32/span 2/span 2;
+}
+
+#chips-23-26{
+  display: grid;
+  grid-area: 12/34/span 2/span 2;
+}
+
+#chips-24-27{
+  display: grid;
+  grid-area: 4/34/span 2/span 2;
+}
+
+#chips-25-26{
+  display: grid;
+  grid-area: 16/36/span 2/span 2;
+}
+
+#chips-25-28{
+  display: grid;
+  grid-area: 20/38/span 2/span 2;
+}
+
+#chips-26-27{
+  display: grid;
+  grid-area: 8/36/span 2/span 2;
+}
+
+#chips-26-29{
+  display: grid;
+  grid-area: 12/38/span 2/span 2;
+}
+
+#chips-27-30{
+  display: grid;
+  grid-area: 4/38/span 2/span 2;
+}
+
+#chips-28-29{
+  display: grid;
+  grid-area: 16/40/span 2/span 2;
+}
+
+#chips-28-31{
+  display: grid;
+  grid-area: 20/42/span 2/span 2;
+}
+
+#chips-29-30{
+  display: grid;
+  grid-area: 8/40/span 2/span 2;
+}
+
+#chips-29-32{
+  display: grid;
+  grid-area: 12/42/span 2/span 2;
+}
+
+#chips-30-33{
+  display: grid;
+  grid-area: 4/42/span 2/span 2;
+}
+
+#chips-31-32{
+  display: grid;
+  grid-area: 16/44/span 2/span 2;
+}
+
+#chips-31-34{
+  display: grid;
+  grid-area: 20/46/span 2/span 2;
+}
+
+#chips-32-33{
+  display: grid;
+  grid-area: 8/44/span 2/span 2;
+}
+
+#chips-32-35{
+  display: grid;
+  grid-area: 12/46/span 2/span 2;
+}
+
+#chips-33-36{
+  display: grid;
+  grid-area: 4/46/span 2/span 2;
+}
+
+#chips-34-35{
+  display: grid;
+  grid-area: 16/48/span 2/span 2;
+}
+
+#chips-35-36{
+  display: grid;
+  grid-area: 8/48/span 2/span 2;
+}
+
+#chips-outer-2f1-1{
+  display: grid;
+  grid-area: 4/-2/span 2/span 1;
+}
+
+#chips-outer-2f1-2{
+  display: grid;
+  grid-area: 12/-2/span 2/span 1;
+}
+
+#chips-outer-2f1-3{
+  display: grid;
+  grid-area: 20/-2/span 2/span 1;
+}
+
+#chips-outer-1to12{
+  display: grid;
+  grid-area: 26/10/span 1/span 2;
+}
+
+#chips-outer-13to24{
+  display: grid;
+  grid-area: 26/26/span 1/span 2;
+}
+
+#chips-outer-25to36{
+  display: grid;
+  grid-area: 26/42/span 1/span 2;
+}
+
+#chips-outer-1to18{
+  display: grid;
+  grid-area: 28/6/span 1/span 2;
+}
+
+#chips-outer-odd{
+  display: grid;
+  grid-area: 28/14/span 1/span 2;
+}
+
+#chips-outer-red{
+  display: grid;
+  grid-area: 28/22/span 1/span 2;
+}
+
+#chips-outer-black{
+  display: grid;
+  grid-area: 28/30/span 1/span 2;
+}
+
+#chips-outer-even{
+  display: grid;
+  grid-area: 28/38/span 1/span 2;
+}
+
+#chips-outer-19to36{
+  display: grid;
+  grid-area: 28/46/span 1/span 2;
+}
+
+
+.betting-chip,.placed-down{
+  position:absolute;
+  box-shadow: 1em;
+}
+
+.bet-50{
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/Coin_Bet_yellow.png");
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.bet-100{
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/Coin_Bet_purple.png");
+  background-size: cover;
+  border-radius: 50%;  
+}
+
+.bet-200{
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/Coin_Bet.png");
+  background-size: cover;
+  border-radius: 50%;  
+}
+
+.bet-500{
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/Coin_Bet_black.png");
+  background-size: cover;
+  border-radius: 50%;  
+}
+
+/* betting segment */
+.bet{
+  z-index: 100;
+}
+
+#center-dbzr{
+  display: grid;
+  grid-area: 5/1/span 4/span 1
+}
+
+#center-0{
+  display: grid;
+  grid-area: 17/1/span 4/span 1
+}
+
+#center-1{
+  display: grid;
+  grid-area: 19/4/span 4/span 2;
+}
+
+#center-2{
+  display: grid;
+  grid-area: 11/4/span 4/span 2;
+}
+
+#center-3{
+  display: grid;
+  grid-area: 3/4/span 4/span 2;
+}
+
+#center-4{
+  display: grid;
+  grid-area: 19/8/span 4/span 2;
+}
+
+#center-5{
+  display: grid;
+  grid-area: 11/8/span 4/span 2;
+}
+
+#center-6{
+  display: grid;
+  grid-area: 3/8/span 4/span 2;
+}
+
+#center-7{
+  display: grid;
+  grid-area: 19/12/span 4/span 2;
+}
+
+#center-8{
+  display: grid;
+  grid-area: 11/12/span 4/span 2;
+}
+
+#center-9{
+  display: grid;
+  grid-area: 3/12/span 4/span 2;
+}
+
+#center-10{
+  display: grid;
+  grid-area: 19/16/span 4/span 2;
+}
+
+#center-11{
+  display: grid;
+  grid-area: 11/16/span 4/span 2;
+}
+
+#center-12{
+  display: grid;
+  grid-area: 3/16/span 4/span 2;
+}
+
+#center-13{
+  display: grid;
+  grid-area: 19/20/span 4/span 2;
+}
+
+#center-14{
+  display: grid;
+  grid-area: 11/20/span 4/span 2;
+}
+
+#center-15{
+  display: grid;
+  grid-area: 3/20/span 4/span 2;
+}
+
+#center-16{
+  display: grid;
+  grid-area: 19/24/span 4/span 2;
+}
+
+#center-17{
+  display: grid;
+  grid-area: 11/24/span 4/span 2;
+}
+
+#center-18{
+  display: grid;
+  grid-area: 3/24/span 4/span 2;
+}
+
+#center-19{
+  display: grid;
+  grid-area: 19/28/span 4/span 2;
+}
+
+#center-20{
+  display: grid;
+  grid-area: 11/28/span 4/span 2;
+}
+
+#center-21{
+  display: grid;
+  grid-area: 3/28/span 4/span 2;
+}
+
+#center-22{
+  display: grid;
+  grid-area: 19/32/span 4/span 2;
+}
+
+#center-23{
+  display: grid;
+  grid-area: 11/32/span 4/span 2;
+}
+
+#center-24{
+  display: grid;
+  grid-area: 3/32/span 4/span 2;
+}
+
+#center-25{
+  display: grid;
+  grid-area: 19/36/span 4/span 2;
+}
+
+#center-26{
+  display: grid;
+  grid-area: 11/36/span 4/span 2;
+}
+
+#center-27{
+  display: grid;
+  grid-area: 3/36/span 4/span 2;
+}
+
+#center-28{
+  display: grid;
+  grid-area: 19/40/span 4/span 2;
+}
+
+#center-29{
+  display: grid;
+  grid-area: 11/40/span 4/span 2;
+}
+
+#center-30{
+  display: grid;
+  grid-area: 3/40/span 4/span 2;
+}
+
+#center-31{
+  display: grid;
+  grid-area: 19/44/span 4/span 2;
+}
+
+#center-32{
+  display: grid;
+  grid-area: 11/44/span 4/span 2;
+}
+
+#center-33{
+  display: grid;
+  grid-area: 3/44/span 4/span 2;
+}
+
+#center-34{
+  display: grid;
+  grid-area: 19/48/span 4/span 2;
+}
+
+#center-35{
+  display: grid;
+  grid-area: 11/48/span 4/span 2;
+}
+
+#center-36{
+  display: grid;
+  grid-area: 3/48/span 4/span 2;
+}
+
+#_dbzr-2-3{
+  display: grid;
+  grid-area: 6/2/span 4/span 2
+}
+
+#_dbzr-0-2{
+  display: grid;
+  grid-area: 12/2/span 2/span 2
+}
+
+#_0-1-2{
+  display: grid;
+  grid-area: 16/2/span 4/span 2
+}
+
+#_1-2-4-5{
+  display: grid;
+  grid-area: 15/6/span 4/span 2;
+}
+
+#_2-3-5-6{
+  display: grid;
+  grid-area: 7/6/span 4/span 2;
+}
+
+#_4-5-7-8{
+  display: grid;
+  grid-area: 15/10/span 4/span 2;
+}
+
+#_5-6-8-9{
+  display: grid;
+  grid-area: 7/10/span 4/span 2;
+}
+
+#_7-8-10-11{
+  display: grid;
+  grid-area: 15/14/span 4/span 2;
+}
+
+#_8-9-11-12{
+  display: grid;
+  grid-area: 7/14/span 4/span 2;
+}
+
+#_10-11-13-14{
+  display: grid;
+  grid-area: 15/18/span 4/span 2;
+}
+
+#_11-12-14-15{
+  display: grid;
+  grid-area: 7/18/span 4/span 2;
+}
+
+#_13-14-16-17{
+  display: grid;
+  grid-area: 15/22/span 4/span 2;
+}
+
+#_14-15-17-18{
+  display: grid;
+  grid-area: 7/22/span 4/span 2;
+}
+
+#_16-17-19-20{
+  display: grid;
+  grid-area: 15/26/span 4/span 2;
+}
+
+#_17-18-20-21{
+  display: grid;
+  grid-area: 7/26/span 4/span 2;
+}
+
+#_19-20-22-23{
+  display: grid;
+  grid-area: 15/30/span 4/span 2;
+}
+
+#_20-21-23-24{
+  display: grid;
+  grid-area: 7/30/span 4/span 2;
+}
+
+#_22-23-25-26{
+  display: grid;
+  grid-area: 15/34/span 4/span 2;
+}
+
+#_23-24-26-27{
+  display: grid;
+  grid-area: 7/34/span 4/span 2;
+}
+
+#_25-26-28-29{
+  display: grid;
+  grid-area: 15/38/span 4/span 2;
+}
+
+#_26-27-29-30{
+  display: grid;
+  grid-area: 7/38/span 4/span 2;
+}
+
+#_28-29-31-32{
+  display: grid;
+  grid-area: 15/42/span 4/span 2;
+}
+
+#_29-30-32-33{
+  display: grid;
+  grid-area: 7/42/span 4/span 2;
+}
+
+#_31-32-34-35{
+  display: grid;
+  grid-area: 15/46/span 4/span 2;
+}
+
+#_32-33-35-36{
+  display: grid;
+  grid-area: 7/46/span 4/span 2;
+}
+
+#_dbzr-0{
+  display: grid;
+  grid-area: 11/1/span 4/span 1
+}
+
+#_dbzr-2{
+  display: grid;
+  grid-area: 10/2/span 2/span 2
+}
+
+#_dbzr-3{
+  display: grid;
+  grid-area: 2/2/span 4/span 2
+}
+
+#_0-2{
+  display: grid;
+  grid-area: 14/2/span 2/span 2
+}
+
+#_0-1{
+  display: grid;
+  grid-area: 20/2/span 4/span 2
+}
+
+#_1-2{
+  display: grid;
+  grid-area: 15/4/span 4/span 2;
+}
+
+#_1-4{
+  display: grid;
+  grid-area: 19/6/span 4/span 2;
+}
+
+#_2-3{
+  display: grid;
+  grid-area: 7/4/span 4/span 2;
+}
+
+#_2-5{
+  display: grid;
+  grid-area: 11/6/span 4/span 2;
+}
+
+#_3-6{
+  display: grid;
+  grid-area: 3/6/span 4/span 2;
+}
+
+#_4-5{
+  display: grid;
+  grid-area: 15/8/span 4/span 2;
+}
+
+#_4-7{
+  display: grid;
+  grid-area: 19/10/span 4/span 2;
+}
+
+#_5-6{
+  display: grid;
+  grid-area: 7/8/span 4/span 2;
+}
+
+#_5-8{
+  display: grid;
+  grid-area: 11/10/span 4/span 2;
+}
+
+#_6-9{
+  display: grid;
+  grid-area: 3/10/span 4/span 2;
+}
+
+#_7-8{
+  display: grid;
+  grid-area: 15/12/span 4/span 2;
+}
+
+#_7-10{
+  display: grid;
+  grid-area: 19/14/span 4/span 2;
+}
+
+#_8-9{
+  display: grid;
+  grid-area: 7/12/span 4/span 2;
+}
+
+#_8-11{
+  display: grid;
+  grid-area: 11/14/span 4/span 2;
+}
+
+#_9-12{
+  display: grid;
+  grid-area: 3/14/span 4/span 2;
+}
+
+#_10-11{
+  display: grid;
+  grid-area: 15/16/span 4/span 2;
+}
+
+#_10-13{
+  display: grid;
+  grid-area: 19/18/span 4/span 2;
+}
+
+#_11-12{
+  display: grid;
+  grid-area: 7/16/span 4/span 2;
+}
+
+#_11-14{
+  display: grid;
+  grid-area: 11/18/span 4/span 2;
+}
+
+#_12-15{
+  display: grid;
+  grid-area: 3/18/span 4/span 2;
+}
+
+#_13-14{
+  display: grid;
+  grid-area: 15/20/span 4/span 2;
+}
+
+#_13-16{
+  display: grid;
+  grid-area: 19/22/span 4/span 2;
+}
+
+#_14-15{
+  display: grid;
+  grid-area: 7/20/span 4/span 2;
+}
+
+#_14-17{
+  display: grid;
+  grid-area: 11/22/span 4/span 2;
+}
+
+#_15-18{
+  display: grid;
+  grid-area: 3/22/span 4/span 2;
+}
+
+#_16-17{
+  display: grid;
+  grid-area: 15/24/span 4/span 2;
+}
+
+#_16-19{
+  display: grid;
+  grid-area: 19/26/span 4/span 2;
+}
+
+#_17-18{
+  display: grid;
+  grid-area: 7/24/span 4/span 2;
+}
+
+#_17-20{
+  display: grid;
+  grid-area: 11/26/span 4/span 2;
+}
+
+#_18-21{
+  display: grid;
+  grid-area: 3/26/span 4/span 2;
+}
+
+#_19-20{
+  display: grid;
+  grid-area: 15/28/span 4/span 2;
+}
+
+#_19-22{
+  display: grid;
+  grid-area: 19/30/span 4/span 2;
+}
+
+#_20-21{
+  display: grid;
+  grid-area: 7/28/span 4/span 2;
+}
+
+#_20-23{
+  display: grid;
+  grid-area: 11/30/span 4/span 2;
+}
+
+#_21-24{
+  display: grid;
+  grid-area: 3/30/span 4/span 2;
+}
+
+#_22-23{
+  display: grid;
+  grid-area: 15/32/span 4/span 2;
+}
+
+#_22-25{
+  display: grid;
+  grid-area: 19/34/span 4/span 2;
+}
+
+#_23-24{
+  display: grid;
+  grid-area: 7/32/span 4/span 2;
+}
+
+#_23-26{
+  display: grid;
+  grid-area: 11/34/span 4/span 2;
+}
+
+#_24-27{
+  display: grid;
+  grid-area: 3/34/span 4/span 2;
+}
+
+#_25-26{
+  display: grid;
+  grid-area: 15/36/span 4/span 2;
+}
+
+#_25-28{
+  display: grid;
+  grid-area: 19/38/span 4/span 2;
+}
+
+#_26-27{
+  display: grid;
+  grid-area: 7/36/span 4/span 2;
+}
+
+#_26-29{
+  display: grid;
+  grid-area: 11/38/span 4/span 2;
+}
+
+#_27-30{
+  display: grid;
+  grid-area: 3/38/span 4/span 2;
+}
+
+#_28-29{
+  display: grid;
+  grid-area: 15/40/span 4/span 2;
+}
+
+#_28-31{
+  display: grid;
+  grid-area: 19/42/span 4/span 2;
+}
+
+#_29-30{
+  display: grid;
+  grid-area: 7/40/span 4/span 2;
+}
+
+#_29-32{
+  display: grid;
+  grid-area: 11/42/span 4/span 2;
+}
+
+#_30-33{
+  display: grid;
+  grid-area: 3/42/span 4/span 2;
+}
+
+#_31-32{
+  display: grid;
+  grid-area: 15/44/span 4/span 2;
+}
+
+#_31-34{
+  display: grid;
+  grid-area: 19/46/span 4/span 2;
+}
+
+#_32-33{
+  display: grid;
+  grid-area: 7/44/span 4/span 2;
+}
+
+#_32-35{
+  display: grid;
+  grid-area: 11/46/span 4/span 2;
+}
+
+#_33-36{
+  display: grid;
+  grid-area: 3/46/span 4/span 2;
+}
+
+#_34-35{
+  display: grid;
+  grid-area: 15/48/span 4/span 2;
+}
+
+#_35-36{
+  display: grid;
+  grid-area: 7/48/span 4/span 2;
+}
+
+#chip-selector{
+  display: grid;
+  grid-template-rows: 0.75fr 2fr 1fr 0.75fr;
+  grid-template-columns:repeat(4,1fr) ;
+  /* min-width:1173px; */
+  /* max-height:50vh; */
+  max-height:100px;
+  width:100%;
+  height:100%;
+  color:white;
+  grid-auto-columns:minmax(200px);
+  row-gap: 2px;
+  column-gap: 2px;
+  /* background:black */
+  border-bottom:2px solid white;
+}
+
+#chip-label-50{
+  display: grid;
+  grid-area: 1/1/span 1/span 1
+}
+
+.chip-stack{
+  position: relative;
+  cursor:pointer;
+  background:none;
+}
+
+#chip-stack-50{
+  display: grid;
+  grid-area: 2/1/span 1/span 1;
+}
+
+#chip-count-50{
+  display: grid;
+  grid-area: 3/1/span 1/span 1
+}
+
+#chip-label-100{
+  display: grid;
+  grid-area: 1/2/span 1/span 1
+}
+
+#chip-stack-100{
+  display: grid;
+  grid-area: 2/2/span 1/span 1
+}
+
+#chip-count-100{
+  display: grid;
+  grid-area: 3/2/span 1/span 1
+}
+
+#chip-label-200{
+  display: grid;
+  grid-area: 1/3/span 1/span 1
+}
+
+#chip-stack-200{
+  display: grid;
+  grid-area: 2/3/span 1/span 1
+}
+
+#chip-count-200{
+  display: grid;
+  grid-area: 3/3/span 1/span 1
+}
+
+#chip-label-500{
+  display: grid;
+  grid-area: 1/4/span 1/span 1
+}
+
+#chip-stack-500{
+  display: grid;
+  grid-area: 2/4/span 1/span 1
+}
+
+#chip-count-500{
+  display: grid;
+  grid-area: 3/4/span 1/span 1
+}
+
+#chip-total-label{
+  display: grid;
+  grid-area: 4/1/span 1/span 1
+}
+
+.user-chips-section{
+  min-width: 5vw;
+  min-height: 2vh;
+  max-width: 50px;
+}
+
+#chip-total-count{
+  display: grid;
+  grid-area: 4/2/span 1/span 4;
+  text-align: center;
+}
+
+#game-board{
+  grid-area: gb;
+}
+
+#title{
+  grid-area: ttl
+}
+
+#spin-button{
+  grid-area: spn;
+}
+
+#wheel{
+  grid-area: whl;
+}
+
+#chip-selector{
+  grid-area: chp;
+}
+
+#alert{
+  grid-area: alrt;
+}
+
+.alert,#title{
+  display: flex;
+  background-image: linear-gradient(to right,black,rgb(6, 63, 6));
+  border-top: 1px white solid;
+  color: white;
+}
+
+#title{
+  text-align: center;
+  color: white;
+  border-color: white;
+  border: solid;
+  border-radius: 33%;
+  min-height: 6vh;
+  place-items: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right,black,red);
+  font-family: "Spirax","cursive";
+  font-size: 30px;
+}
+
+.user-chips-section,#chip-count-50,#chip-count-100,#chip-count-200,#chip-count-500{
+  padding-top:5px;
+  font-family: "Spirax","cursive";
+  font-size: 15px;
+  padding-bottom:5px;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+}
+
+#chip-total-label,#chip-total-count{
+  padding-top: 5px;
+  font-family: "Spirax","cursive";
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+
+#chip-total-count{
+  padding-left: 25px;
+}
+
+.alert-item{
+  flex: 1 1 auto;
+}
+
+#alert-banner{
+  width: 10vw;
+  font-family: "Spirax","cursive";
+  font-size: 25px;
+  white-space: nowrap;
+  height: 30px;
+}
+
+#container{
+  display: grid;
+  grid-template-rows: 0.125fr 0.125fr 1fr 1fr;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-areas: 
+  "alrt alrt"
+  "ttl ttl"
+  "gb gb"
+  "chp whl";
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* roulette wheel */
+.scene {
+  /* border: 1px solid #CCC; */
+  margin: 40px 0;
+  position: relative;
+  width: 210px;
+  height: 14px;
+  margin: 80px auto;
+  perspective: 1000px;
+}
+
+.roulette {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  perspective: 1000em;
+}
+
+.black-roulette{
+  background-color:hsla(0,0%,0%,0.8);
+}
+
+.red-roulette{
+  background-color: hsla(0,100%,50%,0.6)
+}
+
+.green-roulette{
+  background-color: hsla(120,100%,50%,0.6)
+}
+
+.roulette-cell {
+  position: absolute;
+  width: 7vw;
+  height: 9vw;
+  left: 10px;
+  top: 10px;
+  border: 4px solid black;
+  line-height: 116px;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-family:"Spirax","cursive";
+  transition: transform 1s, opacity 1s;
+}
+
+/* Wheel */
+/*  */
+/*  */
+.chip-options{
+  grid-area: 1/1/span 4/span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lobster","cursive";
+  font-size: 40px;
+}
+.roulette-spin-animation{
+  grid-area: 1/2/span 6/span 1;
+}
+.roulette-buttons{
+  grid-area: 7/2/span 1/span 1;
+}
+.wheel{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(7,1fr);
+}
+
+#spin-button{
+  background: none;
+  color: white;
+  font-family: "Spirax","cursive";
+  font-size: 30px;
+  cursor:pointer;
+  border-radius: 40%;
+    /* grid-area: 1/2/span 1/span 1; */
+
+}
+.roulette-options {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  /* background: hsla(0, 0%, 100%, 0.8); */
+}
+.blink {
+  background-color: black;
+  animation: gradient 1s infinite;
+}
+.wheel {
+  /* background: linear-gradient(-45deg, black,darkgray,black,darkgray,black); */
+  background-size: 1000% 1000%;
+  /* animation: gradient1 3s ease infinite; */
+}
+
+@keyframes gradient1 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes gradient {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: darkblue;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+
+#past-spins{
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding-left: 15vw;
+}
+#past-spins > div{
+  display: flex;
+  padding: 10px 30px 0px;
+  border-right: white 1px solid;
+}
+
+.past-spin-black{
+  background: black;
+}
+.past-spin-red{
+  background: red;
+}
+.past-spin-green{
+  background: green;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+
+  #game-board, #chip-selector{
+      transform: rotate(90deg);
+      /* transform-origin: left top; */
+      /* width: 100vw; */
+      /* height: 100vh; */
+      /* overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0; */
+      min-width: unset;
+      }
+
+  .roulette-cell {
+      width: 18vw;
+      height: 20vh;
+      left: 40px;
+      top: 30px;
+      line-height: 80px;
+      font-size: 60px;
+  }  
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  *{
+      margin: 0;
+      padding: 0;
+  }
+
+  #game-board, #chip-selector{
+      transform: rotate(0deg);
+      min-width: unset;
+      }
+
+      #game-board{
+          min-width: 576px;
+      }
+
+  .scene {
+      /* border: 1px solid #CCC; */
+      margin: 0px 0;
+      position: relative;
+      width: 210px;
+      height: 14px;
+      perspective: 1000px;
+  }
+
+  .chip-stack{
+      max-height: 30px;
+      overflow-y: unset;
+  }
+
+  #spin-button{
+      grid-area: spn;
+  }
+
+  #container{
+      display: grid;
+      grid-template-rows: 4fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: 
+      "gb gb"
+      "spn chp"
+      "whl whl"
+      "whl whl";
+      width: 100%;
+  }
+
+  #game-board{
+      max-width: 100%;
+      min-width: unset;
+  }
+
+  .board-cell,.betting-board-cell,._2for1-cell,.green-board-cell{
+      min-height: 20px;
+  }
+
+  .placed-down{
+      width: 12px;
+      height: 12px;
+  }
+
+  .betting-board-cell{
+      min-height: 0px;
+  }
+
+  .roulette-cell {
+      position: absolute;
+      width: 28vw;
+      height: 120px;
+      left: 40px;
+      top: 30px;
+      line-height: 100px;
+      font-size: 60px;
+  }
+
+  #title,#alert{
+      display:none;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  *{
+      margin: 0;
+      padding: 0;
+  }
+
+  #game-board, #chip-selector{
+      transform: rotate(0deg);
+      min-width: unset;
+      }
+
+  .scene {
+      margin: 0px 0;
+      position: relative;
+      width: 210px;
+      height: 14px;
+      perspective: 1000px;
+  }
+
+  .chip-stack{
+      max-height: 30px;
+      overflow-y: unset;
+  }
+
+  #spin-button{
+      grid-area: spn;
+  }
+
+  #container{
+      display: grid;
+      grid-template-rows: 4fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: 
+      "gb gb"
+      "spn chp"
+      "whl whl"
+      "whl whl";
+      width:100%;
+  }
+
+  #game-board{
+      max-width: 100%;
+      min-width: unset;
+  }
+
+  .board-cell,.betting-board-cell,._2for1-cell,.green-board-cell{
+      min-height: 20px;
+  }
+
+  .placed-down{
+      width: 20px;
+      height: 20px;
+  }
+
+  .betting-board-cell{
+      min-height: 0px;
+  }
+
+  .roulette-cell {
+      position: absolute;
+      width: 18vw;
+      height: 20vh;
+      left: 40px;
+      top: 30px;
+      line-height: 70px;
+      font-size: 60px;
+  }
+
+  #title,#alert{
+      display:none;
+  }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .board-cell,.betting-board-cell,._2for1-cell,.green-board-cell{
+    border: 2px white solid;
+    color: white;
+    text-align: center;
+    max-width: none;
+  }
+
+  .scene {
+    margin: 0px 80px 80px 340px;
+    position: relative;
+    width: 210px;
+    height: 14px;
+    perspective: 1000px;
+  }
+
+  .roulette-cell {
+    position: absolute;
+    width: 17vw;
+    height: 16vw;
+    left: 40px;
+    top: 30px;
+    line-height: 120px;
+    font-size: 60px;
+  }
+
+  #container{
+    display: grid;
+    grid-template-rows: 0.125fr 0.125fr 3fr 0.25fr 0.75fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "ttl ttl"
+    "alrt alrt"
+    "gb gb"
+    "chp whl"
+    "spn whl";
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .placed-down{
+    width:30px;
+    height:30px;
+  }
+
+  #game-board{
+    min-width: none;
+    grid-template-rows: repeat(24,1fr) repeat(4,3fr);
+  }
+
+  .chip-stack{
+    max-height: 80px;
+    overflow-y: unset;
+  }
+
+  #title,#alert{
+    display: flex;
+  }
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+  #game-board{
+  min-width: 980px;
+  }
+
+  /* roulette wheel */
+  .scene {
+    margin: 40px 0;
+    position: relative;
+    width: 210px;
+    height: 14px;
+    margin: 80px auto;
+    perspective: 1000px;
+  }
+
+  #spin-button{
+    align-self: center;
+  }
+
+  #chip-selector{
+    border-bottom:none;
+  }
+
+  .roulette-cell {
+    position: absolute;
+    width: 12vw;
+    height: 15vw;
+    left: 10px;
+    top: 10px;
+    line-height: 76px;
+    font-size: 60px;
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+  .roulette-cell{
+      width: 9vw;
+      min-height: 15vh;
+      line-height: 106px;
+  }
+
+  #spin-button{
+    align-self: unset;
+    }
+
+  #chip-selector{
+    border-bottom:2px solid white;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1800px) {
+
+  .roulette-cell{
+      width:8vw;
+      min-height:15vh
+  }
+
+  .placed-down{
+      width:50px;
+      height:40px;
+  }
+}
